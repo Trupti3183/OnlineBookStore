@@ -1,0 +1,45 @@
+/* Contact Form CSS */
+
+.contact {
+    background-color: #fff; /* Set background color for contact form */
+    padding: 20px; /* Add padding */
+    margin-top: 20px; /* Add margin top to separate from other content */
+    border-radius: 5px; /* Add border radius for rounded corners */
+}
+
+.contact h2 {
+    color: rgb(128, 64, 64); /* Set color for heading */
+    text-align: center; /* Center align heading */
+}
+
+.contact form {
+    max-width: 600px; /* Set maximum width for form */
+    margin: 0 auto; /* Center the form horizontally */
+}
+
+.contact label {
+    display: block; /* Display labels on a new line */
+    margin-bottom: 8px; /* Add space below each label */
+    font-weight: bold; /* Make labels bold */
+}
+
+.contact input,
+.contact textarea {
+    width: 100%; /* Make input fields take the full width */
+    padding: 8px; /* Add padding for better appearance */
+    margin-bottom: 16px; /* Add space below each input field */
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+}
+
+.contact button {
+    background-color: #28a745; /* Set background color for submit button */
+    color: white; /* Set text color */
+    padding: 10px 20px; /* Add padding */
+    border: none; /* Remove border */
+    cursor: pointer; /* Set cursor to pointer */
+    border-radius: 5px; /* Add border radius for rounded corners */
+}
+
+.contact button:hover {
+    background-color: #218838; /* Set background color on hover */
+}

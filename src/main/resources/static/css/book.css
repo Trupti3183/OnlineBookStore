@@ -1,0 +1,57 @@
+ body {
+ 	background-image: url('/images/background.jpg');
+ 	/* Replace 'your-background-image.jpg' with the path to your image */
+ 	background-size: cover;
+ 	background-position: center;
+ }
+
+/* CSS for Book Page */
+
+/* Style for the container */
+.container-fluid {
+    padding-left: 0;
+}
+
+/* Sidebar styling */
+
+/* Page content styling */
+#button-container {
+    padding: 20px; /* Add padding to the button container */
+    text-align: center; /* Center align the buttons */
+}
+
+/* Button styling */
+.btn {
+    width: 200px; /* Set a fixed width for the buttons */
+    margin: 10px; /* Add some space around the buttons */
+}
+
+/* Different button colors */
+.btn-primary {
+    background-color: #007bff; /* Blue color for Add Book button */
+}
+
+.btn-secondary {
+    background-color: #6c757d; /* Gray color for View Books button */
+}
+
+.btn-info {
+    background-color: #17a2b8; /* Cyan color for Best Sellers button */
+}
+
+.btn-warning {
+    background-color: #ffc107; /* Yellow color for New Arrivals button */
+}
+
+.btn-success {
+    background-color: #28a745; /* Green color for Award Winning Books button */
+}
+
+.btn-danger {
+    background-color: #dc3545; /* Red color for Back button */
+}
+
+/* Hover effect for buttons */
+.btn:hover {
+    opacity: 0.8; /* Reduce opacity on hover */
+}

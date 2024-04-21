@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Page</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/sidebar.css"> <!-- Custom CSS for sidebar -->
+     <link rel="stylesheet" href="/css/book.css">
+    <script src="/js/index.js"></script>
+
+    <!-- Bootstrap JS and jQuery -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+    <script>
+        // Activate carousel
+        $(document).ready(function() {
+            $('.carousel').carousel();
+
+            // Auto scroll after 5 seconds
+            setTimeout(function() {
+                $('.carousel').carousel('next');
+            }, 5000);
+        });
+    </script>
+</head>
+
+<body>
+
+    <div class="container-fluid">
+        <div class="row">
+
+            <!-- Sidebar -->
+            <nav id="sidebar" class="col-md-3">
+                <div class="sidebar-header">
+                    <h3><i>BookBazzar</i></h3>
+                </div>
+                <ul class="list-unstyled components">
+                    <li><a href="/users/home">Home</a></li>
+                    <li><a href="/books/show">Books</a></li>
+                    <li><a class="logout-btn" th:href="@{/users/logout}">Logout</a></li>
+                </ul>
+            </nav>
+
+            <!-- Page content -->
+            <div id="button-container" class="col-md-9">
+
+                <!-- Add Books Button -->
+                <div class="mb-3">
+                    <a href="/books/add" class="btn btn-primary">Add Book</a>
+                </div>
+                <div class="mb-3">
+                    <a href="/books/view" class="btn btn-secondary">View Books</a>
+                </div>
+
+                <!-- Best Sellers Button -->
+                <div class="mb-3">
+                    <a href="#" class="btn btn-info">Best Sellers</a>
+                </div>
+
+                <!-- New Arrivals Button -->
+                <div class="mb-3">
+                    <a href="#" class="btn btn-warning">New Arrivals</a>
+                </div>
+
+                <!-- Award Winning Books Button -->
+                <div class="mb-3">
+                    <a href="#" class="btn btn-success">Award Winning Books</a>
+                </div>
+
+                <!-- Back Button -->
+                <div class="mt-3">
+                    <a href="javascript:history.back()" class="btn btn-danger">Back</a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    
+
+</body>
+
+</html>

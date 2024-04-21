@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Create User</title>
+	<link rel="stylesheet" href="/css/register.css">
+
+</head>
+
+<body>
+	<div class="container">
+		<div class="card">
+			<h1>Create User</h1>
+			<form th:action="@{/users/register}" method="post">
+
+				<label for="name">Name:</label>
+				<input type="text" id="name" name="name" required>
+
+				<label for="email">Email:</label>
+				<input type="email" id="email" name="email" required>
+
+				<label for="password">Password:</label>
+				<input type="password" id="password" name="password" required>
+
+				<label for="confirmPassword">Confirm Password:</label>
+				<input type="password" id="confirmPassword" name="confirmPassword" required>
+
+				<label for="mobileNumber">Mobile Number:</label>
+				<input type="text" id="mobileNumber" name="mobileNumber" required>
+				<input type="hidden" id="role" name="role" value="USER">
+
+				<button type="submit">Submit</button>
+				<a href="/users/login">Registered Before. Please Login!</a>
+			</form>
+		</div>
+	</div>
+
+	<script type="text/javascript">
+		function validateForm() {
+			var name = document.getElementById("name").value;
+			var email = document.getElementById("email").value;
+			var password = document.getElementById("password").value;
+			var mobileNumber = document.getElementById("mobileNumber").value;
+			var address = document.getElementById("address").value;
+			var govtId = document.getElementById("govtId").value;
+
+			// Simple validation for each field
+			if (name.trim() === "" || email.trim() === "" || mobileNumber.trim() === "" || address.trim() === "" || govtId.trim() === "") {
+				alert("All fields are required.");
+				return false;
+			}
+
+			// Password validation
+			if (!validatePassword(password)) {
+				alert("Password must contain at least one special character, one lowercase letter, one uppercase letter, and be at least 8 characters long.");
+				return false;
+			}
+
+			return true; // Submit the form if all validations pass
+		}
+
+		function validatePassword(password) {
+			// Password must contain at least one special character, one lowercase letter, one uppercase letter, and be at least 8 characters long
+			var passwordRegex = /^(?=.*[!@#$%^&*(),.?":{}|<>])(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d!@#$%^&*(),.?":{}|<>]{8,}$/;
+			return passwordRegex.test(password);
+		}
+	</script>
+</body>
+
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Books</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/viewBooks.css">
+</head>
+
+<body>
+    <div class="container mt-5">
+        <h2>View Books</h2>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Book Id</th>
+                    <th>Title</th>
+                    <th>Author</th>
+                    <th>Publisher</th>
+                    <th>Price</th>
+                    <th>Action</th> <!-- Added column for action buttons -->
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="book : ${books}">
+                    <td th:text="${book.id}">Book Id</td>
+                    <td th:text="${book.title}">Title</td>
+                    <td th:text="${book.author}">Author</td>
+                    <td th:text="${book.publisher}">Publisher</td>
+                    <td th:text="${book.price}">Price</td>
+                    <td>
+                        <!-- Update Button -->
+                        <a th:href="@{'/books/update/' + ${book.id}}" class="btn btn-primary">Update</a>
+                       <a th:href="@{'/books/delete/' + ${book.id}}" class="btn btn-danger">Delete</a>
+
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <!-- Back button -->
+        <a href="#" onclick="history.back()" class="btn btn-secondary">Back</a>
+    </div>
+</body>
+
+</html>

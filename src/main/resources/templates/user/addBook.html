@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add New Book</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+</head>
+
+<body>
+
+    <div class="container mt-5">
+        <h2 class="mb-4">Add New Book</h2>
+
+        <!-- Form to add a new book -->
+        <form th:action="@{/books/add}" th:object="${book}" method="post" enctype="application/x-www-form-urlencoded">
+
+            <!-- Title -->
+            <div class="form-group">
+                <label for="title">Title:</label>
+                <input type="text" class="form-control" id="title" th:field="*{title}" required>
+            </div>
+
+            <!-- Author -->
+            <div class="form-group">
+                <label for="author">Author:</label>
+                <input type="text" class="form-control" id="author" th:field="*{author}" required>
+            </div>
+
+            <!-- Publisher -->
+            <div class="form-group">
+                <label for="publisher">Publisher:</label>
+                <input type="text" class="form-control" id="publisher" th:field="*{publisher}" required>
+            </div>
+
+            <!-- Price -->
+            <div class="form-group">
+                <label for="price">Price:</label>
+                <input type="number" class="form-control" id="price" th:field="*{price}" step="0.01" required>
+            </div>
+
+            <!-- Submit button -->
+            <button type="submit" class="btn btn-primary">Add Book</button>
+
+        </form>
+    </div>
+
+</body>
+
+</html>
